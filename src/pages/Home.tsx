@@ -1,5 +1,6 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon } from '@ionic/react';
 import React, {useState, useEffect} from 'react';
+import { add, remove} from 'ionicons/icons'
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -16,15 +17,20 @@ const Home: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Coffee Counter</IonTitle>
+          
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <div className="container">
         <h1>You drank {coffees} coffees</h1>
         <h3>Add or remove coffees</h3>
-        <IonButton onClick={()=> setCoffees(+coffees - 1)}>-</IonButton>
-        <IonButton onClick={()=> setCoffees(+coffees + 1)}>+</IonButton>
-
+        <IonButton onClick={()=> setCoffees(+coffees - 1)}>
+          <IonIcon icon={remove}/>
+        </IonButton>
+        
+        <IonButton onClick={()=> setCoffees(+coffees + 1)}>
+          <IonIcon icon={add}/>
+        </IonButton>
         </div>
       </IonContent>
     </IonPage>
