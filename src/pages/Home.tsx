@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon } from '@ionic/react';
 import React, {useState, useEffect} from 'react';
-import { add, remove} from 'ionicons/icons'
+import { add, trash} from 'ionicons/icons'
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -24,12 +24,14 @@ const Home: React.FC = () => {
         <div className="container">
         <h1>You drank {coffees} coffees</h1>
         <h3>Add or remove coffees</h3>
-        <IonButton onClick={()=> setCoffees(+coffees - 1)}>
-          <IonIcon icon={remove}/>
+        <IonButton onClick={()=> setCoffees(0)}>
+          <IonIcon icon={trash}/>
+          Reset
         </IonButton>
         
-        <IonButton onClick={()=> setCoffees(+coffees + 1)}>
+        <IonButton slot="start" onClick={()=> setCoffees(+coffees + 1)}>
           <IonIcon icon={add}/>
+          Add
         </IonButton>
         </div>
       </IonContent>
