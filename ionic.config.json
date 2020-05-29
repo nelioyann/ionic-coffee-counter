@@ -1,0 +1,7 @@
+{
+  "name": "coffees_ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
